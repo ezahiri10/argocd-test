@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-playground
+  labels:
+   app: playground
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: playground
+  template: 
+    metadata:
+      labels:
+       app: playground
+    spec:
+     containers:
+     - name : playground-container
+       image: wil42/playground:v1
